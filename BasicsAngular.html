@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+  <p>Name: <input type="text" ng-model="name"></p>
+  <p ng-bind="name"></p>
+
+  <p>City: <input type="text" ng-model="city"></p>
+  <p>You wrote: {{ city }}</p>
+
+  <p>State: <input type="text" ng-model="state"></p>
+  <p>Country: <input type="text" ng-model="country"></p>
+
+
+  <p>
+    1) Data binding in AngularJS is the synchronization between the model and the view. <br>
+        When data in the model changes, the view reflects the change, and when data in the view changes, the model is updated as well. This happens immediately and automatically, which makes sure that the model and the view is updated at all times. <br>
+    2) You can also use double braces {{ }} to display content from the model. <br>
+    3) Use the ng-model directive to bind data from the model to the view on HTML controls (input, select, textarea)</p>
+
+  <p>{{ state + ", " + country }}</p>
+
+</div>
+
+
+
+</body>
+
+<script>
+var app = angular.module("myApp", []);
+app.controller("myCtrl", function($scope) {
+    $scope.state = "Washington";
+    $scope.country = "USA";
+});
+</script>
+</html>
